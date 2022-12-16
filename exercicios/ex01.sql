@@ -35,4 +35,20 @@ LIMIT 10
 
 -- COMMAND ----------
 
-
+-- Selecione os pedidos e defina os grupos em uma nova coluna:
+-- Frete inferior a 10%
+-- Frete entre 10% e 20%
+-- Frete entre 20% e 50%
+-- Frete superior a 50%
+SELECT
+  *,
+  vlPreco + vlFrete AS vlTotal,
+  vlFrete / (vlPreco + vlFrete) AS pctFrete,
+  CASE
+    WHEN vlFrete / (vlPreco + vlFrete) <= 0.1 THEN 'MENOS DE 10%'
+    WHEN vlFrete / (vlPreco + vlFrete) <= 0.25 THEN 'ENTRE 10% E 25%'
+    WHEN vlFrete / (vlPreco + vlFrete) <= 0.5 THEN 'ENTRE 25% E 50%'
+    ELSE 'MAIS DE 50%'
+  END AS descFretePct
+FROM
+  silver_olist.item_pedido
