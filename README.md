@@ -1,6 +1,9 @@
 # linuxtips-descomplicando-sql
+
 Repositório com os códigos desenvolvidos no curso Descomplicando SQL da Linuxtips.
 
-Aprendendo SQL e Databricks para consultar dados.
+Aprendendo o básico em SQL com o Databricks para consulta de dados.
 
-Professor: Téo Calvo
+Conteúdo: `from`, `select`, `where`, `case`, `group by`, `having`, `join`, `order by`, `ctes (subquery)` e `windown function`.
+
+Professor: [Téo Calvo](https://twitter.com/TeoCalvo)
